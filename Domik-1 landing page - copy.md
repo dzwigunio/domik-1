@@ -126,6 +126,8 @@ Dlaczego warto wybrać Domik-1?
    Dom przyszłości, nie przeszłości.  
 * **Przewidywalne koszty**  
    Brak nagłych skoków wydatków.
+* **Niskie zapotrzebowanie na energię**
+   Wzrost kosztów energii nie wpływa na Twoje wydatki.
 
 ---
 
