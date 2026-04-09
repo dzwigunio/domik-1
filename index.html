@@ -622,7 +622,7 @@
                 
                 <div class="grid grid-cols-2 gap-4">
                     <img src="assets/3 - wizualizacja exterior.jpg" alt="Widok 3" class="rounded-3xl shadow-md w-full h-48 object-cover">
-                    <img src="assets/4 - rzuty.png" alt="Rzuty" class="rounded-3xl shadow-md w-full h-48 object-cover bg-white p-2">
+                    <img src="assets/4 - rzuty.png" alt="Rzuty" class="rounded-3xl shadow-md w-full h-48 object-cover bg-white p-2 cursor-pointer" onclick="openModal('assets/4 - rzuty.png', 'Rzuty')">
                     <div class="col-span-2 relative h-64">
                         <img src="assets/1 - wizualizacja exterior.jpg" alt="Główna wizualizacja" class="rounded-3xl shadow-md w-full h-full object-cover">
                     </div>
@@ -814,6 +814,33 @@
                 updateCarousel();
             });
         }
+    </script>
+
+    <!-- Image Modal -->
+    <div id="imageModal" class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 hidden">
+        <div class="relative max-w-4xl max-h-full p-4">
+            <img id="modalImage" src="" alt="" class="max-w-full max-h-full object-contain">
+            <button onclick="closeModal()" class="absolute top-2 right-2 text-white text-2xl font-bold hover:text-gray-300">&times;</button>
+        </div>
+    </div>
+
+    <script>
+        function openModal(src, alt) {
+            document.getElementById('modalImage').src = src;
+            document.getElementById('modalImage').alt = alt;
+            document.getElementById('imageModal').classList.remove('hidden');
+        }
+
+        function closeModal() {
+            document.getElementById('imageModal').classList.add('hidden');
+        }
+
+        // Close modal on background click
+        document.getElementById('imageModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
     </script>
 </body>
 </html>
