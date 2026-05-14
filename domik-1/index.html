@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Domik-1 – Gotowy Dom Pasywny | DomikPasywny.pl</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -14,8 +14,8 @@
     <!-- Header -->
     <header class="header">
         <nav class="container nav">
-            <a href="#" class="nav-logo">
-                <img src="assets/6 - logo.png" alt="DomikPasywny Logo">
+            <a href="../index.html" class="nav-logo">
+                <img src="../assets/6 - logo.png" alt="DomikPasywny Logo">
             </a>
             
             <!-- Desktop Nav -->
@@ -733,11 +733,11 @@
         <div class="container">
             <div class="footer-content">
                 <div>
-                    <img src="assets/6 - logo.png" alt="Logo" class="footer-logo">
+                    <img src="../assets/6 - logo.png" alt="Logo" class="footer-logo">
                     <p class="text-sm">© 2026 DomikPasywny.pl. Wszelkie prawa zastrzeżone.</p>
                 </div>
                 <div class="flex gap-8">
-                    <a href="https://domikpasywny.pl" class="nav-link">domikpasywny.pl</a>
+                    <a href="../index.html" class="nav-link">domikpasywny.pl</a>
                 </div>
             </div>
             <div class="footer-legal">
@@ -747,74 +747,13 @@
     </footer>
 
     <!-- Image Modal -->
-    <div id="imageModal" class="modal hidden">
+    <div id="imageModal" class="modal">
         <div class="modal-content">
             <img id="modalImage" src="" alt="" class="modal-image">
             <button onclick="closeModal()" class="modal-close">&times;</button>
         </div>
     </div>
 
-    <script>
-        // Mobile menu toggle
-        const menuToggle = document.getElementById('menu-toggle');
-        const mobileMenu = document.getElementById('mobile-menu');
-        menuToggle.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-
-        // Close mobile menu on link click
-        document.querySelectorAll('#mobile-menu a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-            });
-        });
-
-        // Carousel functionality
-        const carouselInner = document.querySelector('.carousel-inner');
-        if (carouselInner) {
-            const slides = document.querySelectorAll('.carousel-slide');
-            const prevBtn = document.querySelector('.prev');
-            const nextBtn = document.querySelector('.next');
-            let currentIndex = 0;
-            const totalSlides = slides.length;
-            const visibleSlides = 3;
-            const maxIndex = totalSlides - visibleSlides;
-
-            function updateCarousel() {
-                // Approximate calculation for transform including gaps
-                const offset = currentIndex * (100 / visibleSlides);
-                carouselInner.style.transform = `translateX(-${offset}%)`;
-            }
-
-            nextBtn.addEventListener('click', () => {
-                currentIndex = (currentIndex + 1) > maxIndex ? 0 : currentIndex + 1;
-                updateCarousel();
-            });
-
-            prevBtn.addEventListener('click', () => {
-                currentIndex = (currentIndex - 1) < 0 ? maxIndex : currentIndex - 1;
-                updateCarousel();
-            });
-        }
-
-        function openModal(src, alt) {
-            document.getElementById('modalImage').src = src;
-            document.getElementById('modalImage').alt = alt;
-            document.getElementById('imageModal').classList.remove('hidden');
-            document.getElementById('imageModal').classList.add('active');
-        }
-
-        function closeModal() {
-            document.getElementById('imageModal').classList.add('hidden');
-            document.getElementById('imageModal').classList.remove('active');
-        }
-
-        // Close modal on background click
-        document.getElementById('imageModal').addEventListener('click', function(e) {
-            if (e.target === this) {
-                closeModal();
-            }
-        });
-    </script>
+    <script src="../script.js"></script>
 </body>
 </html>
