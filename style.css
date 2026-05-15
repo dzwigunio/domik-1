@@ -85,6 +85,7 @@ button {
 
 /* Typography Utility */
 .text-brand-red { color: var(--brand-red); }
+.text-white { color: var(--white); }
 .text-gray-400 { color: var(--gray-400); }
 .text-gray-500 { color: var(--gray-500); }
 .text-gray-600 { color: var(--gray-600); }
@@ -248,7 +249,7 @@ button {
 }
 
 @media (min-width: 1024px) {
-    .hero-text {
+    .hero-content .hero-text {
         width: 50%;
     }
 }
@@ -398,6 +399,10 @@ button {
 
 .bg-brand-light {
     background-color: var(--brand-light);
+}
+
+.bg-brand-dark {
+    background-color: var(--brand-dark);
 }
 
 .section-header {
@@ -729,7 +734,7 @@ button {
 
 /* Table */
 .table-wrapper {
-    overflow: hidden;
+    overflow-x: auto;
     border: 1px solid var(--gray-100);
     border-radius: 1.5rem;
     box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
@@ -805,10 +810,11 @@ button {
 }
 
 .why-us-card {
-    background-color: rgba(255, 255, 255, 0.05);
+    background-color: var(--white);
     padding: 2.5rem;
     border-radius: var(--radius-4xl);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--gray-100);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
 }
 
 /* FAQ */
