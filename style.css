@@ -706,6 +706,37 @@ button {
     }
 }
 
+.features-grid {
+    display: grid;
+    gap: 2rem;
+    max-width: 72rem;
+    margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .features-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.feature-svg {
+    width: 4rem;
+    height: 4rem;
+}
+
+@media (min-width: 1024px) {
+    .feature-svg {
+        width: 2rem;
+        height: 2rem;
+    }
+}
+
 .process-step {
     position: relative;
     background-color: var(--white);
